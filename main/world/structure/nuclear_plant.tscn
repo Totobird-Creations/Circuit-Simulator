@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://main/world/structure/nuclear_plant.gd" type="Script" id=1]
+[ext_resource path="res://assets/texture/strutcure/nuclear_plant.png" type="Texture" id=2]
+
+[node name="nuclear_plant" type="Area2D"]
+script = ExtResource( 1 )
+
+[node name="sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="shape" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 2, -52.9, 9, -51.9, 9, -50.7, 19, -46.7, 19, -45.6, 23, -43.6, 23, -42.4, 30, -35.4, 30, -33.4, 33, -30.4, 33, -27.4, 35, -25.4, 35, -22.2, 37, -18.2, 37, 0.0999985, 36.3, 3, 54, 4, 54, 54, -4, 54, -4, 37, -23, 34.9, -23, 34, -26, 34, -26, 32.7, -36, 28.7, -36, 27.6, -40, 25.6, -40, 24.4, -47, 17.4, -47, 15.4, -50, 12.4, -50, 9.4, -52, 7.4, -52, 4.2, -54, 0.199997, -54, -18.2, -49.7, -31, -48.7, -31, -46.7, -36, -45.5, -36, -39.5, -44, -37.5, -44, -35.5, -47, -33.2, -47, -25.3, -52, -22.2, -52, -19, -52.8, -19, -54, 2, -54 )

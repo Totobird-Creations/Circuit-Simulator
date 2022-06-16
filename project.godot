@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Area2D",
+"class": "Structure",
+"language": "GDScript",
+"path": "res://main/world/structure/strutcure.gd"
+} ]
+_global_script_class_icons={
+"Structure": ""
+}
+
 [application]
 
 config/name="Circuit-Simulator"

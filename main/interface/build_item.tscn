@@ -36,3 +36,5 @@ margin_bottom = 56.0
 custom_styles/hover = SubResource( 2 )
 custom_styles/pressed = SubResource( 3 )
 custom_styles/normal = SubResource( 1 )
+
+[connection signal="pressed" from="button" to="." method="pressed"]
