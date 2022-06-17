@@ -1,13 +1,15 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://main/world/camera.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://assets/font/AnekMalayalam-Regular.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://main/interface/build_item.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/texture/strutcure/nuclear_plant.png" type="Texture" id=5]
+[ext_resource path="res://assets/texture/strutcure/battery.png" type="Texture" id=5]
+[ext_resource path="res://main/world/structure/port.tscn" type="PackedScene" id=6]
 [ext_resource path="res://main/interface.gd" type="Script" id=7]
 [ext_resource path="res://main/game.gd" type="Script" id=8]
-[ext_resource path="res://main/world/structure/nuclear_plant.tscn" type="PackedScene" id=9]
+[ext_resource path="res://main/world/structure/battery.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/texture/strutcure/port.png" type="Texture" id=10]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 0.498039 )
@@ -136,11 +138,15 @@ margin_right = 1008.0
 margin_bottom = 80.0
 size_flags_vertical = 3
 
-[node name="poles" type="HBoxContainer" parent="canvas/interface/build/vertical/buildings"]
+[node name="ports" type="HBoxContainer" parent="canvas/interface/build/vertical/buildings"]
 margin_right = 1008.0
 margin_bottom = 56.0
 size_flags_vertical = 3
 custom_constants/separation = 8
+
+[node name="port" parent="canvas/interface/build/vertical/buildings/ports" instance=ExtResource( 4 )]
+texture = ExtResource( 10 )
+scene = ExtResource( 6 )
 
 [node name="sources" type="HBoxContainer" parent="canvas/interface/build/vertical/buildings"]
 visible = false
@@ -149,7 +155,7 @@ margin_bottom = 56.0
 size_flags_vertical = 3
 custom_constants/separation = 8
 
-[node name="nuclear_plant" parent="canvas/interface/build/vertical/buildings/sources" instance=ExtResource( 4 )]
+[node name="battery" parent="canvas/interface/build/vertical/buildings/sources" instance=ExtResource( 4 )]
 texture = ExtResource( 5 )
 scene = ExtResource( 9 )
 
@@ -167,7 +173,7 @@ margin_bottom = 120.0
 rect_min_size = Vector2( 0, 32 )
 custom_constants/separation = 8
 
-[node name="poles" type="Button" parent="canvas/interface/build/vertical/categories"]
+[node name="ports" type="Button" parent="canvas/interface/build/vertical/categories"]
 margin_right = 96.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 96, 0 )
@@ -175,7 +181,7 @@ custom_fonts/font = SubResource( 2 )
 toggle_mode = true
 pressed = true
 group = SubResource( 3 )
-text = "Poles"
+text = "Ports"
 
 [node name="sources" type="Button" parent="canvas/interface/build/vertical/categories"]
 margin_left = 104.0
@@ -218,7 +224,7 @@ custom_styles/focus = SubResource( 7 )
 custom_styles/disabled = SubResource( 7 )
 custom_styles/normal = SubResource( 7 )
 
-[connection signal="toggled" from="canvas/interface/build/vertical/categories/poles" to="canvas/interface/build/vertical/buildings/poles" method="set_visible"]
+[connection signal="toggled" from="canvas/interface/build/vertical/categories/ports" to="canvas/interface/build/vertical/buildings/ports" method="set_visible"]
 [connection signal="toggled" from="canvas/interface/build/vertical/categories/sources" to="canvas/interface/build/vertical/buildings/sources" method="set_visible"]
 [connection signal="toggled" from="canvas/interface/build/vertical/categories/targets" to="canvas/interface/build/vertical/buildings/targets" method="set_visible"]
 [connection signal="pressed" from="canvas/interface/build/toggle" to="canvas/interface" method="toggle_build"]

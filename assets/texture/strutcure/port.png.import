@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/nuclear_plant.png-bce0f373d5381263fe4df5ee33fce5ab.stex"
+path="res://.import/port.png-b50ea1e745e148cd264472f7afefcc79.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/texture/strutcure/nuclear_plant.png"
-dest_files=[ "res://.import/nuclear_plant.png-bce0f373d5381263fe4df5ee33fce5ab.stex" ]
+source_file="res://assets/texture/strutcure/port.png"
+dest_files=[ "res://.import/port.png-b50ea1e745e148cd264472f7afefcc79.stex" ]
 
 [params]
 
