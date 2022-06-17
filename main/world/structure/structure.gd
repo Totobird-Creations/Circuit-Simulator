@@ -14,6 +14,11 @@ export(State) var state : int = State.PENDING
 
 
 
+func get_game_world() -> Node:
+	return get_parent().get_game_world()
+
+
+
 func unpending() -> void:
 	for child in get_children():
 		if (child.has_method("unpending")):
