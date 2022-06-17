@@ -24,10 +24,6 @@ func _input(event : InputEvent) -> void:
 	if (event is InputEventMouseButton):
 		if (event.button_index == BUTTON_MIDDLE):
 			panning = event.pressed
-		elif (event.button_index == BUTTON_WHEEL_UP):
-			target_zoom = clamp(target_zoom - zoom_index, zoom_min, zoom_max)
-		elif (event.button_index == BUTTON_WHEEL_DOWN):
-			target_zoom = clamp(target_zoom + zoom_index, zoom_min, zoom_max)
 
 	elif (event is InputEventMouseMotion):
 		if (panning):

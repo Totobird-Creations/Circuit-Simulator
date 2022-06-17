@@ -21,5 +21,5 @@ func _ready() -> void:
 
 
 func pressed() -> void:
-	get_node("../../../../../../../").add_pending_structure(scene)
+	get_node("../../../../../../../").add_pending_structure(scene.instance())
 	get_node("../../../../../").toggle_build()

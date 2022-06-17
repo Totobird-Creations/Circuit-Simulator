@@ -9,12 +9,18 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Structure",
+"class": "PortStructure",
+"language": "GDScript",
+"path": "res://main/world/structure/port.gd"
+}, {
 "base": "Area2D",
 "class": "Structure",
 "language": "GDScript",
-"path": "res://main/world/structure/strutcure.gd"
+"path": "res://main/world/structure/structure.gd"
 } ]
 _global_script_class_icons={
+"PortStructure": "",
 "Structure": ""
 }
 
