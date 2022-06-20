@@ -27,4 +27,4 @@ func _input(event : InputEvent) -> void:
 
 	elif (event is InputEventMouseMotion):
 		if (panning):
-			target_position -= event.relative
+			target_position -= event.relative * zoom

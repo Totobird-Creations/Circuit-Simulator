@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/lamp.png-9ef9be2e4ba57b83c66ab2da94063171.stex"
+path="res://.import/battery.png-cafb1b30857aafd3c85c2560c2a9cf15.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/texture/strutcure/lamp.png"
-dest_files=[ "res://.import/lamp.png-9ef9be2e4ba57b83c66ab2da94063171.stex" ]
+source_file="res://assets/texture/structure/battery.png"
+dest_files=[ "res://.import/battery.png-cafb1b30857aafd3c85c2560c2a9cf15.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

@@ -9,19 +9,61 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "ComponentStructure",
+"class": "BatteryStructure",
+"language": "GDScript",
+"path": "res://main/world/structure/battery.gd"
+}, {
+"base": "Structure",
+"class": "ComponentStructure",
+"language": "GDScript",
+"path": "res://main/world/structure/component.gd"
+}, {
+"base": "StructurePath",
+"class": "ParallelStructurePath",
+"language": "GDScript",
+"path": "res://main/world/path/parallel.gd"
+}, {
 "base": "Structure",
 "class": "PortStructure",
 "language": "GDScript",
 "path": "res://main/world/structure/port.gd"
 }, {
+"base": "ComponentStructure",
+"class": "ResistorStructure",
+"language": "GDScript",
+"path": "res://main/world/structure/resistor.gd"
+}, {
+"base": "StructurePath",
+"class": "SeriesStructurePath",
+"language": "GDScript",
+"path": "res://main/world/path/series.gd"
+}, {
 "base": "Node2D",
 "class": "Structure",
 "language": "GDScript",
 "path": "res://main/world/structure/structure.gd"
+}, {
+"base": "Node",
+"class": "StructurePath",
+"language": "GDScript",
+"path": "res://main/world/path/path.gd"
+}, {
+"base": "Node2D",
+"class": "Wire",
+"language": "GDScript",
+"path": "res://main/world/wire.gd"
 } ]
 _global_script_class_icons={
+"BatteryStructure": "",
+"ComponentStructure": "",
+"ParallelStructurePath": "",
 "PortStructure": "",
-"Structure": ""
+"ResistorStructure": "",
+"SeriesStructurePath": "",
+"Structure": "",
+"StructurePath": "",
+"Wire": ""
 }
 
 [application]
@@ -30,6 +72,15 @@ config/name="Circuit-Simulator"
 run/main_scene="res://main/game.tscn"
 config/icon="res://icon.png"
 
+[debug]
+
+settings/gdscript/max_call_stack=4096
+
+[display]
+
+window/size/width=1536
+window/size/height=900
+
 [global]
 
 theme=false
@@ -37,6 +88,34 @@ theme=false
 [gui]
 
 theme/custom="res://assets/theme.tres"
+
+[importer_defaults]
+
+texture={
+"compress/bptc_ldr": 0,
+"compress/hdr_mode": 0,
+"compress/lossy_quality": 0.7,
+"compress/mode": 0,
+"compress/normal_map": 0,
+"detect_3d": true,
+"flags/anisotropic": false,
+"flags/filter": false,
+"flags/mipmaps": false,
+"flags/repeat": 0,
+"flags/srgb": 2,
+"process/HDR_as_SRGB": false,
+"process/fix_alpha_border": true,
+"process/invert_color": false,
+"process/normal_map_invert_y": false,
+"process/premult_alpha": false,
+"size_limit": 0,
+"stream": false,
+"svg/scale": 1.0
+}
+
+[network]
+
+limits/debugger_stdout/max_chars_per_second=32768
 
 [physics]
 
@@ -47,5 +126,5 @@ common/enable_pause_aware_picking=true
 quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
-environment/default_clear_color=Color( 0.74902, 0.74902, 0.74902, 1 )
+environment/default_clear_color=Color( 0, 0, 0, 1 )
 environment/default_environment="res://default_env.tres"

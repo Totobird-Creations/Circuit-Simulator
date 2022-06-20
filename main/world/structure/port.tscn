@@ -1,28 +1,44 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://main/world/structure/port.gd" type="Script" id=1]
-[ext_resource path="res://assets/texture/strutcure/port.png" type="Texture" id=2]
+[ext_resource path="res://assets/texture/structure/port.png" type="Texture" id=2]
 [ext_resource path="res://assets/shader/structure.tres" type="Shader" id=3]
+[ext_resource path="res://assets/font/FiraMono-Bold.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="ShaderMaterial" id=4]
 shader = ExtResource( 3 )
 shader_param/color = Color( 0, 0, 0, 1 )
-shader_param/width = 25.0
-shader_param/pattern = 1
+shader_param/width = 3.125
+shader_param/pattern = 0
 shader_param/inside = false
 shader_param/add_margins = true
+
+[sub_resource type="DynamicFont" id=5]
+size = 12
+outline_size = 2
+extra_spacing_top = -4
+extra_spacing_bottom = -4
+font_data = ExtResource( 4 )
 
 [sub_resource type="CircleShape2D" id=3]
 radius = 8.0
 
 [node name="port" type="Node2D"]
-z_index = 1
+z_index = 2
+z_as_relative = false
 script = ExtResource( 1 )
 
 [node name="sprite" type="Sprite" parent="."]
 material = SubResource( 4 )
-scale = Vector2( 0.125, 0.125 )
 texture = ExtResource( 2 )
+
+[node name="debug" type="Label" parent="."]
+visible = false
+grow_horizontal = 2
+grow_vertical = 2
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 5 )
 
 [node name="hover" type="Area2D" parent="."]
 monitorable = false

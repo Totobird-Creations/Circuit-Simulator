@@ -10,7 +10,35 @@ enum State {
 	WORLD,
 	LOCKED
 }
-export(State) var state : int = State.PENDING
+export(State) var state   : int   = State.PENDING
+
+var               hovered : bool  = false         setget set_hovered
+
+var               voltage : float = 1.0
+
+
+
+func _input(event : InputEvent) -> void:
+	if (event is InputEventMouseButton):
+		if (event.button_index == BUTTON_LEFT && event.pressed && hovered):
+			pressed_left()
+		elif (event.button_index == BUTTON_MIDDLE && event.pressed && hovered):
+			pressed_middle()
+		elif (event.button_index == BUTTON_RIGHT && event.pressed && hovered && state in [State.PENDING, State.WORLD]):
+			queue_free()
+
+
+
+func set_hovered(value : bool) -> void:
+	hovered = value && can_hover()
+	if (hovered):
+		$sprite.modulate = Color(1.0, 1.0, 0.0)
+	else:
+		$sprite.modulate = Color(1.0, 1.0, 1.0)
+	#$debug.visible = hovered
+
+func can_hover() -> bool:
+	return get_game_world().pending_wire == null
 
 
 
@@ -23,6 +51,25 @@ func unpending() -> void:
 	for child in get_children():
 		if (child.has_method("unpending")):
 			child.unpending()
+
+
+
+func get_bridge() -> Array:
+	return []
+
+
+
+func mouse_entered() -> void:
+	self.hovered = true
+
+func mouse_exited() -> void:
+	self.hovered = false
+
+func pressed_left() -> void:
+	pass
+
+func pressed_middle() -> void:
+	pass
 
 
 

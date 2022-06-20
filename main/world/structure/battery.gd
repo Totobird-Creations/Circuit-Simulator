@@ -1,5 +1,2 @@
-extends Structure
-
-
-
-
+extends ComponentStructure
+class_name BatteryStructure
