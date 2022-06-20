@@ -1,4 +1,4 @@
-extends Area2D
+extends Node2D
 class_name Structure
 
 
@@ -29,23 +29,9 @@ func unpending() -> void:
 func _physics_process(_delta : float) -> void:
 	match (state):
 		State.PENDING:
-			var mouse := get_global_mouse_position()
-			var pos   := Vector2(floor(mouse.x / SNAP), floor(mouse.y / SNAP)) * SNAP
-			if (get_class() == "PortStructure"):
-				pos      += Vector2(SNAP / 2.0, SNAP / 2.0)
-				var dist := -1.0
-				for offset in [
-					Vector2(-SNAP / 2.0, 0.0),
-					Vector2(SNAP / 2.0, 0.0),
-					Vector2(0.0, -SNAP / 2.0),
-					Vector2(0.0, SNAP / 2.0)
-				]:
-					var new_dist := mouse.distance_to(pos + offset)
-					if (dist < 0.0 || new_dist < dist):
-						dist            = new_dist
-						global_position = pos + offset
-			else:
-				global_position = pos + Vector2(SNAP / 2.0, SNAP / 2.0)
+			var mouse       := get_global_mouse_position()
+			var pos         := Vector2(floor(mouse.x / SNAP), floor(mouse.y / SNAP)) * SNAP
+			global_position  = pos + Vector2(SNAP / 2.0, SNAP / 2.0)
 			modulate.a = 0.5
 
 		State.WORLD:
