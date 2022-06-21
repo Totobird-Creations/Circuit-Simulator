@@ -1,19 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://main/world/structure/battery.gd" type="Script" id=1]
 [ext_resource path="res://assets/texture/structure/battery.png" type="Texture" id=2]
 [ext_resource path="res://main/world/structure/port.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/shader/structure.tres" type="Shader" id=4]
 [ext_resource path="res://assets/font/FiraMono-Bold.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://assets/texture/arrow.png" type="Texture" id=6]
-
-[sub_resource type="ShaderMaterial" id=1]
-shader = ExtResource( 4 )
-shader_param/color = Color( 0, 0, 0, 1 )
-shader_param/width = 2.5
-shader_param/pattern = 1
-shader_param/inside = false
-shader_param/add_margins = true
 
 [sub_resource type="DynamicFont" id=3]
 size = 12
@@ -30,7 +21,6 @@ script = ExtResource( 1 )
 diode = true
 
 [node name="sprite" type="Sprite" parent="."]
-material = SubResource( 1 )
 position = Vector2( 64, 0 )
 texture = ExtResource( 2 )
 
